@@ -1,0 +1,19 @@
+vlib work
+vlog SpaRAM.v SPI_INTERFRACE.v SPI_FIRST_TRIAL.v
+vsim -voptargs=+acc work.spi_inter_tb
+add wave *
+add wave -position insertpoint  \
+sim:/spi_inter_tb/tb_inst/spi_inst/cs \
+sim:/spi_inter_tb/tb_inst/spi_inst/ns \
+sim:/spi_inter_tb/tb_inst/spi_inst/counter \
+sim:/spi_inter_tb/tb_inst/spi_inst/tx_valid \
+sim:/spi_inter_tb/tb_inst/spi_inst/tx_data \
+sim:/spi_inter_tb/tb_inst/RAM_inst/dout \
+sim:/spi_inter_tb/tb_inst/RAM_inst/read_address \
+sim:/spi_inter_tb/tb_inst/spi_inst/rx_valid \
+sim:/spi_inter_tb/tb_inst/spi_inst/rx_data \
+sim:/spi_inter_tb/tb_inst/RAM_inst/din \
+sim:/spi_inter_tb/tb_inst/RAM_inst/write_address \
+sim:/spi_inter_tb/tb_inst/RAM_inst/mem
+
+run -all
